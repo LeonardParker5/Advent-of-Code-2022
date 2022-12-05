@@ -5,9 +5,9 @@
 
 import re
 
-##########
-# PART 1 #
-##########
+##############
+# PART 1 & 2 #
+##############
 
 file = open('Inputs/day5input.txt', 'r')
 
@@ -24,8 +24,16 @@ for line in file:
 
 for line in file:
     command = re.findall(r'\d+', line)
+    
+    # PART 1 #
+    # for i in range(int(command[0])):
+    #     STACKS[int(command[2]) - 1].append(STACKS[int(command[1]) - 1].pop())
+    
+    # PART 2 #
+    crane_stack = []
     for i in range(int(command[0])):
-        STACKS[int(command[2]) - 1].append(STACKS[int(command[1]) - 1].pop())
+        crane_stack.insert(0,(STACKS[int(command[1]) - 1].pop()))
+    STACKS[int(command[2])-1].extend(crane_stack)
 
 top_crates = ""
 for i in STACKS: top_crates += i[-1]
