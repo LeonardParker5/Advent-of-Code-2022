@@ -88,3 +88,7 @@ print("Match solution sum is " + str(sum(i for i in dirs.values() if i <= 100000
 
 print("Tree solution min is " + str(next(i for i in sorted(sizes) if i >= sizes[0] - 40000000)))
 print("Match solution min is " + str(min(i for i in dirs.values() if i >= dirs[""] - 40000000)))
+
+##########
+# FINAL #
+##########
